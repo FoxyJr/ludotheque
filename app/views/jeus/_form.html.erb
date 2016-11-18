@@ -26,6 +26,11 @@
     <%= f.text_field :rank %>
   </div>
 
+  <div class="field">
+    <label>Console</label>
+    <%= collection_select(:jeu, :console, Console.all, :id, :title, prompt:true ) %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
