@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Jeus</h1>
+
+  <tbody>
+    <% @jeus.each do |jeu| %>
+      <tr>
+        <td><%= jeu.title %></td>
+        <td><%= jeu.description %></td>
+        <td><%= jeu.rank %></td>
+        <td><%= %></td>
+        <td><%= link_to 'Show', jeu %></td>
+        <td><%= link_to 'Edit', edit_jeu_path(jeu) %></td>
+        <td><%= link_to 'Destroy', jeu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jeu', new_jeu_path %>

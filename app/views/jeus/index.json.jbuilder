@@ -1,0 +1,1 @@
+json.array! @jeus, partial: 'jeus/jeu', as: :jeu

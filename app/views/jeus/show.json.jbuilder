@@ -1,0 +1,1 @@
+json.partial! "jeus/jeu", jeu: @jeu
