@@ -1,18 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Jeus</h1>
+<h1>Liste de Jeux</h1>
 
   <tbody>
     <% @jeus.each do |jeu| %>
+    <div class="container">
       <tr>
-        <td><%= jeu.title %></td>
-        <td><%= jeu.description %></td>
-        <td><%= jeu.rank %></td>
-        <td><%=  %></td>
-        <td><%= link_to 'Show', jeu %></td>
-        <td><%= link_to 'Edit', edit_jeu_path(jeu) %></td>
-        <td><%= link_to 'Destroy', jeu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><p class="row" id="title"><%= jeu.title %> : </p> </td>
+        <td><p class="row" id="description"><%= jeu.description %></p> </td>
+        <td><p class="row" id="rank"><%= jeu.rank %>/5</p></td>
+        <td class="show"><%= link_to 'Show', jeu %></td>
+        <td class="edit"><%= link_to 'Edit', edit_jeu_path(jeu) %></td>
+        <td class="destroy"><%= link_to 'Destroy', jeu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      </div>
     <% end %>
   </tbody>
 </table>

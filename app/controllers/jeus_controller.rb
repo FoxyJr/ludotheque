@@ -25,7 +25,6 @@ class JeusController < ApplicationController
   # POST /jeus.json
   def create
     @jeu = Jeu.new(jeu_params)
-    @jeu.consoles.build
 
     respond_to do |format|
       if @jeu.save
