@@ -1,37 +1,6 @@
-<%= form_for(jeu) do |f| %>
-  <% if jeu.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(jeu.errors.count, "error") %> prohibited this jeu from being saved:</h2>
-
-      <ul>
-      <% jeu.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :rank %>
-    <%= f.text_field :rank %>
-  </div>
-
-  <div class="field">
-    <label>Console</label>
-    <%= collection_select(:jeu, :console, Console.all, :id, :title, prompt:true ) %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= simple_form_for @jeu do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :rank %>
+  <%= f.button :submit %>
 <% end %>

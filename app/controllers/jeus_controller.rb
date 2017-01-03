@@ -25,6 +25,7 @@ class JeusController < ApplicationController
   # POST /jeus.json
   def create
     @jeu = Jeu.new(jeu_params)
+    @jeu.consoles.build
 
     respond_to do |format|
       if @jeu.save
@@ -69,6 +70,6 @@ class JeusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def jeu_params
-      params.require(:jeu).permit(:title, :description, :rank)
+      params.require(:jeu).permit(:title, :description, :rank, :console)
     end
 end
